@@ -71,7 +71,7 @@ TEST_CASE("Vector", "[vector]")
 	SECTION("Projection")
 	{
 		v1 = Vector(1.0f, 2.0f, 3.0f);
-		v2 = v2(2.0f, 4.0f, 6.0f);
+		v2 = Vector(2.0f, 4.0f, 6.0f);
 
 		v1 = v1.projection(v1, v2);
 
