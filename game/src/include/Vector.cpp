@@ -5,11 +5,7 @@
 #include <math.h>
 #include <cmath>
 
-//Calculate the length of a Vector3
-float Vector::Length(Vector vA, Vector vB)
-{
-	return sqrt((vA.x - vB.x)*(vA.x - vB.x) + (vA.y - vB.y)*(vA.y - vB.y) + (vA.z - vB.z)*(vA.z - vB.z));
-}
+
 
 Vector::Vector()
 {
@@ -96,42 +92,3 @@ Vector Vector::projection(Vector vA, Vector vB)
 	return Vector(projectedX, projectedY, projectedZ);
 
 }
-
-//Normalize a Vector3 (Good for anything moving towards another point)
-Vector Vector::normalize(Vector vA, Vector vB)
-{
-	//Normalize
-	float length = Length(vA, vB);
-
-
-	float normalizedX = (vB.x - vA.x) / length;
-	float normalizedY = (vB.y - vB.y) / length;
-	float normalizedZ = (vB.z - vB.z) / length;
-
-
-	return Vector(normalizedX, normalizedY, normalizedZ);
-
-}
-
-
-void Vector::invariant() const {
-}
-
-
-//Determine the direction of a Vector3 (return an angle)
-float Vector::Vector3Direction(Vector vA, Vector vB)
-{
-	return 	(atan2(vB.z - vA.z, vB.x - vA.x)) * 180 / 3.14159265358979323846;
-}
-
-bool Vector::isCollidingSphere(Vector & c1, float r1, Vector & c2, float r2)
-{
-
-
-	if (c1.Length(c1, c2) < r1 + r2) return true;
-
-
-	return false;
-}
-
-
