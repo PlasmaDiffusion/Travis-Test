@@ -20,7 +20,7 @@ TEST_CASE("Vector", "[vector]")
 		
 		CHECK(v1.x == Approx(5.0f));
 		CHECK(v1.y == Approx(7.0f));
-		CHECK(v1.z == Approx(8.0f));
+		CHECK(v1.z == Approx(9.0f));
 	}
 
 	SECTION("Subtraction")
@@ -38,6 +38,7 @@ TEST_CASE("Vector", "[vector]")
 
 	SECTION("Scalar Multiplication")
 	{
+		v1 = Vector(1, 2, 3);
 
 		v1 = v1.scalarMultiply(2.0f);
 
