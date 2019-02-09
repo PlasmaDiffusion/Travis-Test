@@ -1,11 +1,33 @@
+#pragma once
 class Vector
 {
+
+
 public:
 
-    Vector(float x = 0.0f, float y = 0.0f, float z = 0.0f);
+	float x;
+	float y;
+	float z;
 
-    Vector operator+(const Vector& other) const;
-    Vector operator-(const Vector& other) const;
+	Vector();
+	Vector(float x, float y, float z);
+	~Vector();
 
-    float x, y, z;
+	Vector add(Vector other);
+	Vector subtract(Vector other);
+	Vector scalarMultiply(float scalar);
+
+	float dotProduct(Vector vA, Vector vB);
+
+	Vector crossProduct(Vector vA, Vector vB);
+
+	float Vector::Length(Vector vA, Vector vB);
+	Vector Vector::projection(Vector vA, Vector vB);
+	Vector Vector::normalize(Vector vA, Vector vB);
+	float Vector::Vector3Direction(Vector vA, Vector vB);
+
+	bool isCollidingSphere(Vector &c1, float r1, Vector &c2, float r2);
+
+	void invariant() const;
+
 };
