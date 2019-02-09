@@ -75,8 +75,8 @@ TEST_CASE("Vector", "[vector]")
 
 		v1 = v1.projection(v1, v2);
 
-		CHECK(v1.x == Approx(6.0f));
-		CHECK(v1.y == Approx(6.0f));
-		CHECK(v1.z == Approx(0.0f));
+		CHECK(v1.x == Approx(24.0f));
+		CHECK(v1.y == Approx(12.0f));
+		CHECK(v1.z == Approx(8.0f));
 	}
 }
