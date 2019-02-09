@@ -1,0 +1,6 @@
+﻿  Vector3.cpp
+c:\users\100580683\documents\visual studio 2017\projects\blog5\blog5\vector3.cpp(124): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Source.cpp
+  Generating Code...
+  Blog5.vcxproj -> c:\users\100580683\documents\visual studio 2017\Projects\Blog5\Debug\Blog5.exe
+  Blog5.vcxproj -> c:\users\100580683\documents\visual studio 2017\Projects\Blog5\Debug\Blog5.pdb (Partial PDB)

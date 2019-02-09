@@ -1,6 +1,8 @@
-
+install/
+build/
+dep/
+*.swp
 *.tlog
-*.obj
-*.log
-*.pdb
 *.idb
+*.obj
+*.pdb
