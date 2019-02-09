@@ -6,61 +6,61 @@
 #include <cmath>
 
 //Calculate the length of a Vector3
-float Vector3::Length(Vector3 vA, Vector3 vB)
+float Vector::Length(Vector vA, Vector vB)
 {
 	return sqrt((vA.x - vB.x)*(vA.x - vB.x) + (vA.y - vB.y)*(vA.y - vB.y) + (vA.z - vB.z)*(vA.z - vB.z));
 }
 
-Vector3::Vector3()
+Vector::Vector()
 {
 	x = 0.0f;
 	y = 0.0f;
 	z = 0.0f;
 }
 
-Vector3::Vector3(float x, float y, float z)
+Vector::Vector(float x, float y, float z)
 {
 	this->x = x;
 	this->y = y;
 	this->z = z;
 }
 
-Vector3::~Vector3()
+Vector::~Vector()
 {
 }
 
-Vector3 Vector3::add(Vector3 other)
+Vector Vector::add(Vector other)
 {
-	Vector3 returnVal;
+	Vector returnVal;
 
 
-	returnVal = Vector3(this->x + other.x, this->y + other.y, this->z + other.z);
+	returnVal = Vector(this->x + other.x, this->y + other.y, this->z + other.z);
 
 	return returnVal;
 }
 
-Vector3 Vector3::subtract(Vector3 other)
+Vector Vector::subtract(Vector other)
 {
-	Vector3 returnVal;
+	Vector returnVal;
 
-	returnVal = Vector3(this->x - other.x, this->y - other.y, this->z - other.z);
+	returnVal = Vector(this->x - other.x, this->y - other.y, this->z - other.z);
 
 	return returnVal;
 }
 
-Vector3 Vector3::scalarMultiply(float scalar)
+Vector Vector::scalarMultiply(float scalar)
 {
-	Vector3 returnVal;
+	Vector returnVal;
 
 
 
-	returnVal = Vector3(this->x * scalar, this->y * scalar, this->z * scalar);
+	returnVal = Vector(this->x * scalar, this->y * scalar, this->z * scalar);
 
 	return returnVal;
 
 }
 
-float Vector3::dotProduct(Vector3 vA, Vector3 vB)
+float Vector::dotProduct(Vector vA, Vector vB)
 {
 	float returnVal;
 
@@ -71,18 +71,18 @@ float Vector3::dotProduct(Vector3 vA, Vector3 vB)
 
 }
 
-Vector3 Vector3::crossProduct(Vector3 vA, Vector3 vB)
+Vector Vector::crossProduct(Vector vA, Vector vB)
 {
-	Vector3 returnVal;
+	Vector returnVal;
 
 
-	returnVal = Vector3(vA.y * vB.z - vA.z * vB.x, vA.z*vB.y - vA.x*vB.z, vA.x*vB.y - vA.y * vB.x);
+	returnVal = Vector(vA.y * vB.z - vA.z * vB.x, vA.z*vB.y - vA.x*vB.z, vA.x*vB.y - vA.y * vB.x);
 
 	return returnVal;
 }
 
 //Project a Vector3 onto another
-Vector3 Vector3::projection(Vector3 vA, Vector3 vB)
+Vector Vector::projection(Vector vA, Vector vB)
 {
 
 	float projectedX;
@@ -93,12 +93,12 @@ Vector3 Vector3::projection(Vector3 vA, Vector3 vB)
 	projectedY = ((dotProduct(vA, vB)) / (abs(vA.y)*abs(vA.y))) * vA.y;
 	projectedZ = ((dotProduct(vA, vB)) / (abs(vA.z)*abs(vA.z))) * vA.z;
 
-	return Vector3(projectedX, projectedY, projectedZ);
+	return Vector(projectedX, projectedY, projectedZ);
 
 }
 
 //Normalize a Vector3 (Good for anything moving towards another point)
-Vector3 Vector3::normalize(Vector3 vA, Vector3 vB)
+Vector Vector::normalize(Vector vA, Vector vB)
 {
 	//Normalize
 	float length = Length(vA, vB);
@@ -109,22 +109,22 @@ Vector3 Vector3::normalize(Vector3 vA, Vector3 vB)
 	float normalizedZ = (vB.z - vB.z) / length;
 
 
-	return Vector3(normalizedX, normalizedY, normalizedZ);
+	return Vector(normalizedX, normalizedY, normalizedZ);
 
 }
 
 
-void Vector3::invariant() const {
+void Vector::invariant() const {
 }
 
 
 //Determine the direction of a Vector3 (return an angle)
-float Vector3::Vector3Direction(Vector3 vA, Vector3 vB)
+float Vector::Vector3Direction(Vector vA, Vector vB)
 {
 	return 	(atan2(vB.z - vA.z, vB.x - vA.x)) * 180 / 3.14159265358979323846;
 }
 
-bool Vector3::isCollidingSphere(Vector3 & c1, float r1, Vector3 & c2, float r2)
+bool Vector::isCollidingSphere(Vector & c1, float r1, Vector & c2, float r2)
 {
 
 
