@@ -21,7 +21,7 @@ public:
 
 	Vector crossProduct(Vector vA, Vector vB);
 
-	Vector Vector::projection(Vector vA, Vector vB);
+	Vector projection(Vector vA, Vector vB);
 
 	bool isCollidingSphere(Vector &c1, float r1, Vector &c2, float r2);
 
